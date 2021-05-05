@@ -1,0 +1,109 @@
+.container {
+    margin: 0 auto;
+    width: 50%;
+    margin-top: 15%;
+}
+
+.container div:nth-child(2) {
+    width: 30%;
+    margin: 0 auto;
+}
+
+.title {
+    text-align: center;
+    font-size: 80px;
+    font-weight: bolder;
+}
+
+.register,
+.login {
+    display: inline-block;
+    width: 60px;
+    margin: 0 14%;
+    font-size: 28px;
+    text-decoration: none;
+    color: black;
+}
+
+.signup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 9999;
+    background-color: rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    color: white;
+    visibility: hidden;
+    opacity: 0;
+    pointer-events: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.signup:target {
+    visibility: visible;
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.signup>div {
+    width: 600px;
+    height: 400px;
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.window-close {
+    float: right;
+    margin-right: 10px;
+    font-size: 20px;
+    text-decoration: none;
+    color: #747d8c;
+}
+
+.signup .title {
+    text-align: center;
+    font-size: 40px;
+    color: #4b4b4b;
+}
+
+.signin a {
+    color: #4b4b4b;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+}
+
+.content2 input {
+    width: 350px;
+    height: 25px;
+    color: black;
+    padding: 0px;
+    display: block;
+    outline: none;
+    border: none;
+    border-bottom: 1px solid #a4b0be;
+    margin: 65px auto;
+    padding-left: 10px;
+    font-size: 16px;
+}
+
+.content2 input:nth-child(1) {
+    margin-top: 60px;
+}
+
+.confrm {
+    display: block;
+    margin: 0 auto;
+    background-color: transparent;
+    border: none;
+    font-size: 15px
+}
+
+.confrm :hover {
+    box-shadow: 0 0 20px black;
+}
