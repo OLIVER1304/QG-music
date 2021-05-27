@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>QGMUSIC</title>
-    <link rel="stylesheet" href="../public/QGmusic.css">
+    <link rel="stylesheet" href="../public/css/QGmusic.css">
 </head>
 
 <body>
@@ -16,7 +16,7 @@
         </div>
         <div class="rsbtn">
             <a href="#register" class="register">注册</a>
-            <a href="" class="login">登录</a>
+            <a href="#login" class="login">登录</a>
         </div>
     </div>
     <div id="register" class="signup">
@@ -27,6 +27,19 @@
                 <input id="input7" name="username" type="text" placeholder="用户名" onfocus="this.placeholder=' '" onblur="this.placeholder='用户名'">
                 <input id="input10" name="password" type="password" placeholder="密码" onfocus="this.placeholder=' '" onblur="this.placeholder='密码'">
                 <button class="confrm">确定</button>
+                <a href="#login">登录</a>
+            </form>
+        </div>
+    </div>
+    <div id="login" class="signup">
+        <div>
+            <a href="#" class="window-close">x</a>
+            <h2 class="title">登录</h2>
+            <form class="content2" action="/dologin">
+                <input id="input8" name="username" type="text" placeholder="用户名" onfocus="this.placeholder=' '" onblur="this.placeholder='用户名'">
+                <input id="input9" name="password" type="password" placeholder="密码" onfocus="this.placeholder=' '" onblur="this.placeholder='密码'">
+                <button class="confrm">确定</button>
+                <a href="#register">注册</a>
             </form>
         </div>
     </div>
