@@ -1,0 +1,534 @@
+body {
+    margin: 0;
+    height: 90vh;
+}
+
+.container {
+    width: 800px;
+    height: 100%;
+    margin: 0 auto;
+}
+
+.navigator-1 {
+    border: 0px solid transparent;
+    z-index: 1;
+    background-color: #242424;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+[class^=box] {
+    height: 70px;
+    border: 1px solid transparent;
+    text-align: center;
+    color: #b2bec3;
+}
+
+.navigator-1 a {
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    color: #dfe6e9;
+}
+
+.navigator-1 ul {
+    width: 560px;
+    margin: 0;
+    padding: 0;
+    float: left;
+}
+
+.navigator-1 li {
+    position: relative;
+    list-style: none;
+    margin-left: -4.5px;
+    padding: 0px;
+    font-size: 15px;
+    width: 100px;
+    height: 70px;
+    line-height: 70px;
+    display: inline-block;
+}
+
+.navigator-1 li:nth-child(3),
+.navigator-1 li:nth-child(4) {
+    width: 75px;
+}
+
+.navigator-1 .active {
+    background-color: black;
+}
+
+.box {
+    width: 1000px;
+}
+
+.box1 {
+    width: 210px;
+    padding: 0ch;
+    margin: 0px;
+    color: white;
+    float: left;
+}
+
+.box1 a {
+    line-height: 70px;
+    font-size: 35px;
+    font-weight: bolder;
+}
+
+.navigator-1 li:hover {
+    background-color: black;
+}
+
+.wrapper {
+    position: relative;
+    width: 190px;
+    float: left;
+    font-size: 12px;
+    margin: 20px 0;
+}
+
+.navigator-1 i {
+    position: absolute;
+    margin-top: 8.5px;
+    margin-left: 8px;
+}
+
+.wrapper input {
+    height: 30px;
+    width: 158px;
+    border-radius: 15px;
+    outline: none;
+    border: none;
+    margin-top: 0px;
+    padding-left: 27px;
+    color: gray;
+}
+
+.wrap {
+    position: relative;
+    width: 1000px;
+    margin: 0 auto;
+}
+
+
+/* ---------------------------------------------------------------------------------------main-1 */
+
+.main-1 .top {
+    width: 100%;
+    position: relative;
+}
+
+.main-1 .top .pic {
+    float: left;
+    width: 200px;
+    height: 200px;
+}
+
+.main-1 .top .pic img {
+    width: 200px;
+    height: 200px;
+}
+
+.main-1 .top .pic .msk {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    top: 10px;
+    padding: 3px;
+    border: 0.5px solid rgb(194, 192, 192);
+}
+
+.main-1 .top .cnt {
+    margin-left: 220px;
+}
+
+.main-1 .top .cnt .cnt1 p {
+    width: 340px;
+    display: inline-block;
+    margin-bottom: 4px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.main-1 .top .cnt .cnt2 p {
+    font-size: 12px;
+    color: #999;
+    line-height: 40px;
+}
+
+.main-1 .top .cnt .cnt3 {
+    height: 30px;
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+.main-1 .top .cnt .cnt3 a {
+    float: left;
+    width: 60px;
+    height: 30px;
+    text-decoration: none;
+    background: rgb(69, 140, 233);
+    color: white;
+    text-align: center;
+    line-height: 30px;
+    border-radius: 10px;
+}
+
+.main-1 .top .cnt .cnt5 .p1-1 {
+    display: none;
+    font-size: 12px;
+    color: #666;
+}
+
+.main-1 .top .cnt .cnt5 .p1-2 {
+    display: block;
+    font-size: 12px;
+    color: #666;
+}
+
+.main-1 .top .cnt .cnt5 .p2-1 {
+    display: block;
+    font-size: 12px;
+    color: #666;
+}
+
+.main-1 .top .cnt .cnt5 .p2-2 {
+    display: none;
+    font-size: 12px;
+    color: #666;
+}
+
+.main-1 .top .cnt .cnt5 a {
+    float: right;
+    display: block;
+}
+
+.main-1 .head {
+    position: relative;
+    margin-top: 27px;
+    height: 33px;
+    border: 2px solid #b33939;
+    border-top: 0px;
+    border-left: 0px;
+    border-right: 0px;
+    font-size: 10px;
+}
+
+
+/* ---------------------------------------------------------------------------------------歌曲列表头部 */
+
+.main-1 h3 {
+    float: left;
+    margin: 0px;
+    line-height: 28px;
+    font-size: 20px;
+    font-weight: normal;
+}
+
+.main-1 .head .sub {
+    float: left;
+    margin-top: 8px;
+    margin-left: 20px;
+    color: #999;
+    font-size: 12px;
+}
+
+.main-1 .head .times {
+    float: right;
+    margin-top: 8px;
+    font-size: 12px
+}
+
+.main-1 .head .times span {
+    color: #c20c0c;
+    font-weight: bolder;
+    font-size: 12px
+}
+
+.main-1 .head .link {
+    float: right;
+    margin-top: 7px;
+    margin-right: 20px;
+    font-size: 12px;
+    line-height: 19px;
+}
+
+.main-1 .head .link i {
+    width: 16px;
+    height: 16px;
+    float: left;
+    margin: 0;
+}
+
+.main-1 .content table {
+    width: 100%;
+}
+
+
+/* ---------------------------------------------------------------------------------------歌曲列表 */
+
+.main-1 .d-f-m {
+    width: 100%;
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.songs {
+    width: 870px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.songs ul {
+    list-style: none;
+    padding: 0;
+}
+
+.songs ul li {
+    height: 47.5px;
+}
+
+.songs ul select {
+    width: 100px;
+    height: 47px;
+    font-size: 20px;
+}
+
+.songs ul li:first-child {
+    font-weight: bolder;
+    font-size: 20px;
+}
+
+.songs li div {
+    float: left;
+    width: 267px;
+    padding: 12px 0;
+    text-align: center;
+    border: 1px solid #778ca3;
+}
+
+.songs li div:nth-child(3) {
+    width: 200px;
+}
+
+.dock {
+    cursor: pointer;
+    padding: 15px;
+    border: 1px solid #778ca3;
+}
+
+
+/* ---------------------------------------------------------------------------------------查看跟多，请下载客户端*/
+
+.main-1 .d-f-m p {
+    font-size: 13px;
+}
+
+.main-1 .d-f-m a {
+    display: block;
+    width: 150px;
+    height: 30px;
+    text-align: center;
+    line-height: 29px;
+    font-size: 13px;
+    text-decoration: none;
+    color: #ffffff;
+    background-color: rgb(245, 72, 72);
+    border-radius: 30px;
+}
+
+.main-1 .comment .post-comments {
+    width: 100%;
+    height: 130px;
+    position: relative;
+}
+
+
+/* ---------------------------------------------------------------------------------------评论区*/
+
+.main-1 .comment .u-p {
+    position: absolute;
+}
+
+.main-1 .comment .u-p img {
+    width: 50px;
+    height: 50px;
+    display: block;
+}
+
+.main-1 .comment .post-comments .m-cmmtipt {
+    position: relative;
+    margin-top: 20px;
+    margin-left: 60px;
+}
+
+.main-1 .comment .post-comments .corr {
+    position: absolute;
+    top: 11px;
+    left: -7px;
+}
+
+.main-1 .comment .post-comments .u-arr {
+    width: 13px;
+    height: 14px;
+    overflow: hidden
+}
+
+.main-1 .comment .post-comments .arrline {
+    height: 10px;
+    width: 100%;
+    display: block;
+    font-size: 15px;
+    color: #cdcdcd;
+    font-family: "SimSun";
+    font-style: normal;
+    font-weight: normal;
+    line-height: normal;
+}
+
+.main-1 .comment .post-comments .arrclr {
+    height: 10px;
+    display: block;
+    margin: -10px 0 0 1px;
+    color: #fff;
+    font-size: 15px;
+    line-height: normal;
+    font-family: "SimSun";
+    font-style: normal;
+    font-weight: normal;
+}
+
+.main-1 .comment .post-comments textarea {
+    display: block;
+    height: 80px;
+    width: 720px;
+    padding-left: 6px;
+    padding-top: 5px;
+    font-size: 18px;
+    resize: none;
+    border: 1px solid #cdcdcd;
+    border-radius: 2px;
+    outline: none;
+}
+
+.main-1 .comment .interact {
+    height: 30px;
+    margin-top: 15px;
+}
+
+.main-1 .comment .emoji {
+    width: 20px;
+    height: 23px;
+    float: left;
+    margin-right: 5px;
+}
+
+.main-1 .comment .at {
+    width: 20px;
+    height: 23px;
+    float: left;
+}
+
+.main-1 .comment .count {
+    width: 30px;
+    height: 20px;
+    float: right;
+    font-size: 13px;
+    color: #cdcdcd;
+    margin-right: 5px;
+    margin-top: 5px;
+}
+
+.main-1 .comment .cmt {
+    width: 46px;
+    height: 25px;
+    float: right;
+    text-align: center;
+    font-size: 12px;
+    line-height: 26px;
+    color: white;
+    font-weight: bolder;
+    background: #55efc4;
+    border-radius: 4px;
+}
+
+.main-1 .comment .cmt:hover {
+    background-position: -84px -94px;
+}
+
+.main-1 .comment .comment-list .head-title {
+    width: 100%;
+    height: 30px;
+}
+
+.main-1 .comment .comment-list .head-title h6 {
+    font-size: 12px;
+    font-weight: bolder;
+    margin: 0;
+    line-height: 30px;
+}
+
+.main-1 .comment .comment-list .c-l {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.main-1 .comment .comment-list .c-l li {
+    border-top: 1px solid #ccc;
+}
+
+.main-1 .comment .comment-list .c-l li:first-child {
+    display: none;
+}
+
+.main-1 .comment .comment-list .c-l .u-com {
+    padding: 15px 0;
+}
+
+.main-1 .comment .comment-list .c-l .u-com .head,
+.main-1 .comment .comment-list .c-l .u-com img {
+    width: 50px;
+    height: 50px;
+    float: left;
+    margin: 0;
+}
+
+.main-1 .comment .comment-list .c-l .cntwrap {
+    margin-left: 60px;
+}
+
+.main-1 .comment .comment-list .c-l .cntwrap div:first-child {
+    padding-top: 10px;
+}
+
+.main-1 .comment .comment-list .c-l .rp {
+    margin-top: 15px;
+    height: 20px;
+}
+
+.main-1 .comment .comment-list .c-l .date {
+    float: left;
+}
+
+.main-1 .comment .comment-list .c-l .reply {
+    float: right;
+    display: block;
+    line-height: 25px;
+    font-size: 12px;
+    text-decoration: none;
+    color: black;
+}
+
+.main-1 .comment .comment-list .c-l .rp span {
+    float: right;
+    margin: 0 10px;
+}
