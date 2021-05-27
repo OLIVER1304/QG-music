@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>歌单</title>
+    <link rel="stylesheet" href="../public/css/recommend.css">
+    <link href="//netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <!-- 导航栏 -->
+    <div class="navigator-1">
+        <div class="box">
+            <div class="box1">
+                <a href="">QG music</a>
+            </div>
+            <ul>
+                <li class="active"><a href="">发现音乐</a></li>
+                <li class=""><a href="">我的音乐</a></li>
+                <li class=""><a href="">朋友</a></li>
+                <li class=""><a href="">商城</a></li>
+                <li class=""><a href="">音乐人</a></li>
+                <li class="">
+                    <a href="">下载客户端</a>
+                    <sup class="hot"></sup>
+                </li>
+            </ul>
+            <div class="wrapper">
+                <i class="fa fa-search fa-lg"></i>
+                <input id="myInput" type="text" placeholder="音乐" onfocus="placeholder=''" onblur="placeholder='音乐'" onkeyup="myFunction()">
+            </div>
+        </div>
+    </div>
+    <div class="container ">
+        <div class="row">
+            <div class="main">
+                <div class="main-1">
+                    <!-- 头部介绍及按钮 -->
+                    <div class="top">
+                        <div class="pic">
+                            <span class="msk"><img src="../public/img/0-3.jpg" alt=""></span>
+                        </div>
+                        <div class="cnt">
+                            <div class="cnt1">
+                                <p>推荐歌单</p>
+                            </div>
+                            <div class="cnt2">
+                                <p>2020-10-17 创建</p>
+                            </div>
+                            <div class="cnt3">
+                                <a href="">播放</a>
+                            </div>
+                            <div id="cnt5" class="cnt5">
+                                <div class="p1-1"><b>介绍：</b>
+                                    <br>曲折的故事终会有一个圆满的结局
+                                    <br> 至少人们看见了墨色宇宙中璀璨的星辉
+                                    <br> 远方的山川开始变得温柔
+                                    <br> 大概一切都会好起来
+                                    <br> 你如流星从天空滑过
+                                    <br> 我站在彼端凝望
+                                    <br> 你留光明于天际
+                                    <br> 我目送你远去
+                                    <br> 或许有一天我会再次祝愿你
+                                    <br>不要被黑夜束缚
+                                    <br> 变得更加温暖与热烈
+                                    <br>现在是冬日
+                                    <br> 晚风轻踩着云朵
+                                    <br> 月亮在贩售快乐
+                                    <br>我合十双手
+                                    <br>真诚祝愿
+                                    <br> 你从银河背后靠近我
+                                    <br> 我与星辉一同为你沦陷
+                                    <br>“我爱你 如鲸向海 如鸟投林 不可避免 退无可退”
+                                </div>
+                                <div class="p1-2"><b>介绍：</b>
+                                    <br>曲折的故事终会有一个圆满的结局
+                                    <br> 至少人们看见了墨色宇宙中璀璨的星辉
+                                    <br> 远方的山川开始变得温柔
+                                    <br> 大概一切都会好起来
+                                    <br> 你如流星从天空滑过
+                                    <br> 我站在彼端凝望
+                                    <br> 你留光明于天际
+                                    <br> 我目送你远去
+                                    <br> 或许有一天我会再次祝愿...
+                                </div>
+                                <a id=a1 href="javascript:;">展开</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 歌曲列表 -->
+                    <div class="soungs-list">
+                        <div class="head">
+                            <h3>
+                                <span>歌单列表</span>
+                            </h3>
+                        </div>
+                        <div id="content">
+                            <div class="songs">
+                                <ul id="content">
+                                    <li style="">
+                                        <div>歌曲</div>
+                                        <div>歌手</div>
+                                        <div>类型</div>
+                                    </li>
+                                    <li id="type" style="">
+                                        <div>Allforlove</div>
+                                        <div>Tungevaag/Raaban</div>
+                                        <div class="type">流行</div>
+                                        <dia id="dock" title="加入播放列表" class="dock fa fa-plus" onclick="addinfo(this,playing,aubox);post(this)" data-index="Allforlove,Tungevaag/Raaban,流行,https://sharefs.yun.kugou.com/202105120907/0a32f21b981265ac6c1f8b0d33366bc3/G125/M06/10/08/XZQEAFsFR0eAd_ekADTaZmrK1hU944.mp3"></dia>
+                                    </li>
+                                    <li id="type" style="">
+                                        <div>溯</div>
+                                        <div>胡梦周/马吟吟</div>
+                                        <div class="type">华语</div>
+                                        <dia id="dock" title="加入播放列表" class="dock fa fa-plus" onclick="addinfo(this,playing,aubox);post(this)" data-index="溯,胡梦周/马吟吟,华语,https://sharefs.yun.kugou.com/202105120050/aebafd1e30de375a9e7ee18d327c15c7/KGTX/CLTX001/757b465d7942bab4f124a4e6f57eb7ff.mp3"></dia>
+                                    </li>
+                                    <li id="type" style="">
+                                        <div>晚安</div>
+                                        <div>颜人中</div>
+                                        <div class="type">华语</div>
+                                        <dia id="dock" title="加入播放列表" class="dock fa fa-plus" onclick="addinfo(this,playing,aubox);post(this)" data-index="晚安,颜人中,华语,https://sharefs.yun.kugou.com/202105120845/c9b1c5db2b9f15419d44be31b0bb525c/G232/M05/17/03/iIcBAF8fhNmAQRaEAEarqnloVKA094.mp3"></dia>
+                                    </li>
+                                    <li id="type" style="">
+                                        <div>不喜欢下雨天</div>
+                                        <div>PIggy</div>
+                                        <div class="type">华语</div>
+                                        <dia id="dock" title="加入播放列表" class="dock fa fa-plus" onclick="addinfo(this,playing,aubox);post(this)" data-index="不喜欢下雨天,PIggy,华语,https://sharefs.yun.kugou.com/202105120844/5ce0fbc791a83df5dc91c9c7eeaa89f9/G152/M02/15/15/OIcBAFz__qSAeobxACmOinxRkkk520.mp3"></dia>
+                                    </li>
+                                    <li id="type" style="">
+                                        <div>Shotgun</div>
+                                        <div>GeorgeEzra</div>
+                                        <div class="type">流行</div>
+                                        <dia id="dock" title="加入播放列表" class="dock fa fa-plus" onclick="addinfo(this,playing,aubox);post(this)" data-index="Shotgun,GeorgeEzra,流行,https://sharefs.yun.kugou.com/202105120905/f32ae0462ef5ac8ca3ae137ece10f532/G129/M0A/1D/00/YZQEAFqz13eAeQsQADEpdz7sclw265.mp3"></dia>
+                                    </li>
+                                    <li id="type" style="">
+                                        <div>南山南</div>
+                                        <div>马邮</div>
+                                        <div class="type">流行</div>
+                                        <dia id="dock" title="加入播放列表" class="dock fa fa-plus" onclick="addinfo(this,playing,aubox);post(this)" data-index="南山南,马邮,流行,https://sharefs.yun.kugou.com/202105120904/6bc22e142aff23115c80843031eeb3e2/G188/M02/0A/14/_A0DAF5VdKuAciIZAE8esCkD5qU750.mp3"></dia>
+                                    </li>
+                                    <li id="type" style="">
+                                        <div>mood</div>
+                                        <div>24kGoldn/ianndior/LilGhost小鬼</div>
+                                        <div class="type">流行</div>
+                                        <dia id="dock" title="加入播放列表" class="dock fa fa-plus" onclick="addinfo(this,playing,aubox);post(this)" data-index="mood,24kGoldn/ianndior/LilGhost小鬼,流行,https://sharefs.yun.kugou.com/202105120838/a677302eb92e9a48863ca57eb7932a8e/KGTX/CLTX001/21fbfaf6ab830ae64549985fbd16c5ac.mp3"></dia>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 评论区 -->
+                    <div class="comment">
+                        <div class="head">
+                            <h3>评论</h3>
+                        </div>
+                        <div class="post-comments">
+                            <span class="u-p">
+                                <img src="" alt="">
+                            </span>
+                            <form action="">
+                                <div class="m-cmmtipt">
+                                    <div class="corr u-arr">
+                                        <em class="arrline">◆</em>
+                                        <span class="arrclr">◆</span>
+                                    </div>
+
+                                    <textarea name="comments" id="ta" cols="20" rows="20" placeholder="评论" onfocus="placeholder=''" onblur="placeholder='评论'" onKeyUp="javascript:checkWord(this);" onMouseDown="javascript:checkWord(this);"></textarea>
+                                    <div class="interact">
+                                        <div class="emoji"></div>
+                                        <div class="at"></div>
+                                        <div id="cmt" class="cmt">评论</div>
+                                        <div class="count">
+                                            <span id="wordChecks">160</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="comment-list">
+                            <div class="head-title">
+                                <h6>精彩评论</h6>
+                            </div>
+                            <ul id="c-l" class="c-l">
+                                <li>
+                                    <div class="u-com">
+                                        <div class="head">
+                                            <img src="" alt="">
+                                        </div>
+                                        <div class="cntwrap">
+                                            <div>
+                                                eeeeeeee
+                                            </div>
+                                            <div class="rp">
+                                                <div class="date"></div>
+                                                <a id="reply" class="reply" href="javascript:void(0)">回复</a>
+                                                <span>|</span>
+                                                <a href=""></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+
+                        </div>
+                    </div>
+                </div>
+                <script src="../public/js/recommend.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../public/css/home.css">
+    <script src="../public/js/rolling-picture.js"></script>
+    <link href="//netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="navigator-1">
+        <div class="box">
+            <div class="box1">
+                <a href="">QG music</a>
+            </div>
+            <ul>
+                <li class="active"><a href="">发现音乐</a></li>
+                <li class=""><a href="">我的音乐</a></li>
+                <li class=""><a href="">朋友</a></li>
+                <li class=""><a href="">商城</a></li>
+                <li class=""><a href="">音乐人</a></li>
+                <li class="">
+                    <a href="">下载客户端</a>
+                    <sup class="hot"></sup>
+                </li>
+            </ul>
+            <div class="wrapper">
+                <i class="fa fa-search fa-lg"></i>
+                <input id="myInput" type="text" placeholder="音乐" onfocus="placeholder=''" onblur="placeholder='音乐'" onkeyup="myFunction()">
+            </div>
+        </div>
+    </div>
+    <div class="back-rolling-picture"></div>
+    <div class="wrap">
+        <button class="btn" id="gopre" onclick="gopre()"> 
+            <i class="fa fa-angle-left fa-3x"></i>
+        </button>
+        <button class="btn" id="gonext" onclick="gonext()">
+            <i class="fa fa-angle-right fa-3x"></i>
+        </button>
+        <div class="rolling-picture">
+            <span class="rolling-picture-1">
+                <img src="../public/img/1.jpg" class="item active" alt="">
+                <img src="../public/img/2.jpg" class="item" alt="">
+                <img src="../public/img/3.jpg" class="item" alt="">
+                <img src="../public/img/4.jpg" class="item" alt="">
+                <img src="../public/img/5.jpg" class="item" alt="">
+                <img src="../public/img/6.jpg" class="item" alt="">
+                
+                <ul>
+                    <li class="point active" data-index="0"></li>
+                    <li class="point" data-index="1"></li>
+                    <li class="point" data-index="2"></li>
+                    <li class="point" data-index="3"></li>
+                    <li class="point" data-index="4"></li>
+                    <li class="point" data-index="5"></li>
+                </ul>
+            </span>
+        </div>
+    </div>
+    <div class="outframe">
+        <div class="head">
+            <div class="popular">
+                <a href="">热门推荐</a></div>
+        </div>
+        <div class="Recommended-song-list">
+            <ul>
+                <li>
+                    <a href="/recommend"><img src="../public/img/0-3.jpg" alt=""></a>
+                </li>
+                <li>
+                    <a href=""><img src="../public/img/0-4.jpg" alt=""></a>
+                </li>
+                <li>
+                    <a href=""><img src="../public/img/0-5.jpg" alt=""></a>
+                </li>
+                <li>
+                    <a href=""><img src="../public/img/0-8.jpg" alt=""></a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="songs">
+        <ul id="content">
+            <li>
+                <div>歌曲</div>
+                <div>歌手</div>
+                <div>类型</div>
+                <select name="" id="" onchange="choice(this.options[this.options.selectedIndex].value)">
+                    <option value="null">请选择</option>
+                    <option value="流行">流行</option>
+                    <option value="华语">华语</option>
+                </select>
+            </li>
+        </ul>
+    </div>
+
+
+    <div class="bigvessel">
+        <div class="mplayer">
+            <div class="btn">
+                <div>
+                    <a href="javascript:;" class="pre" onclick="pre()"></a>
+                </div>
+                <div>
+                    <a href="javascript:;" id="play/pause" class="play" onclick="fff()"></a>
+                </div>
+                <div>
+                    <a href="javascript:;" class="next" onclick="next()"></a>
+                </div>
+            </div>
+            <div id="aubox">
+                <div id="vessel1" class="active molecu">
+                    <audio src="https://sharefs.yun.kugou.com/202105120838/a677302eb92e9a48863ca57eb7932a8e/KGTX/CLTX001/21fbfaf6ab830ae64549985fbd16c5ac.mp3" controls="controls" id="play1" class="wc">
+                    </audio>
+                </div>
+                <div id="vessel2" class="vessel molecu">
+                    <audio src="https://sharefs.yun.kugou.com/202105120844/5ce0fbc791a83df5dc91c9c7eeaa89f9/G152/M02/15/15/OIcBAFz__qSAeobxACmOinxRkkk520.mp3" controls="controls" id="play2" class="wc">
+                    </audio>
+                </div>
+                <div id="vessel3" class="vessel molecu">
+                    <audio src="https://sharefs.yun.kugou.com/202105120845/c9b1c5db2b9f15419d44be31b0bb525c/G232/M05/17/03/iIcBAF8fhNmAQRaEAEarqnloVKA094.mp3" controls="controls" id="play3" class="wc">
+                    </audio>
+                </div>
+                <div id="vessel4" class="vessel molecu">
+                    <audio src="https://sharefs.yun.kugou.com/202105120050/aebafd1e30de375a9e7ee18d327c15c7/KGTX/CLTX001/757b465d7942bab4f124a4e6f57eb7ff.mp3" controls="controls" id="play4" class="wc">
+                </audio>
+                </div>
+            </div>
+
+            <div class="listbox">
+                <a id="list" href="javascript:;" class="list" onclick="musiclist()">播放列表</a>
+            </div>
+            <div id="playlist" class="playlist-2">
+                <div id="playing" class="playing">
+                    <div>
+                        <div>歌曲</div>
+                        <div>歌手</div>
+                        <div>类型</div>
+                        <div onclick="clearAll()">清空</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="bottom">
+        <p></p>
+    </div>
+    <script src="../public/js/playmusic.js"></script>
+    <script src="../public/js/search.js"></script>
+    <script src="../public/js/playlist.js"></script>
+    <script>
+        for (var i = 0; i < point.length; i++) {
+            point[i].addEventListener('click', function() {
+                var pointindex = this.getAttribute('data-index');
+                index = pointindex;
+                goindex();
+            })
+        }
+    </script>
+    <script src="../public/js/content.js"></script>
+
+</body>
+
+</html>
