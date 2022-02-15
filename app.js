@@ -1,14 +1,18 @@
 var fs = require('fs')
 var http = require('http')
 var url = require('url')
+let multer = require('multer')
 const User = require('./database/model/User')
 const songs = require('./database/model/songs')
+const List = require('./database/model/list')
 const jwt = require('jsonwebtoken')
 const storage = require('node-sessionstorage')
 
 require('./database/init')
 var db = './public/js/db.json'
 var comment = './public/js/comments.json'
+var ls = './public/js/songs.json'
+var upload = multer({ dest: './public/upload' })
 
 http
     .createServer(async(req, res) => {
@@ -53,10 +57,13 @@ http
                 console.log('用户名：', username)
                 const model = await User.findOne({ where: { username } })
                 if (model) {
+                    res.writeHead(200, {
+                        'content-type': 'text/html;charset=utf8'
+                    });
                     console.log('用户名已存在');
                     // res.send({ msg: '用户名已存在' })
                     res.statusCode = 400
-                    res.end()
+                    res.end("<h1>用户名已存在</h1><a href='http://localhost:3000/#register'>返回</a>")
                     return
                 }
                 const user = await User.create({ username, password })
@@ -72,17 +79,23 @@ http
             console.log('输入的用户名：', username)
             const model = await User.findOne({ where: { username } })
             if (!model) {
+                res.writeHead(200, {
+                    'content-type': 'text/html;charset=utf8'
+                });
                 console.log('此用户名不存在');
                 // res.send({ msg: '此用户名不存在' })
                 res.statusCode = 400
-                res.end()
+                res.end("<h1>此用户名不存在</h1><a href='http://localhost:3000/#login'>返回</a>")
                 return
             }
             if (password != model.password) {
+                res.writeHead(200, {
+                    'content-type': 'text/html;charset=utf8'
+                });
                 console.log('密码错误');
                 // res.send({ msg: '密码错误' })
                 res.statusCode = 400
-                res.end()
+                res.end("<h1>密码错误</h1><a href='http://localhost:3000/#login'>返回</a>")
                 return
             }
             const token = jwt.sign({ username }, 'xxoo')
@@ -98,7 +111,6 @@ http
                 res.setHeader('Location', '/')
                 return
             }
-            console.log(token)
             const { username } = jwt.verify(token, 'xxoo')
             const model = await User.findOne({ where: { username } })
             if (!model) {
@@ -115,14 +127,35 @@ http
                 res.write(data);
                 res.end()
             })
-            const all = await songs.findAll()
-            const a = JSON.stringify(all)
-                // fs.writeFile(db, a, function(err) {
-                //     if (err) {
-                //         console.log('写入失败')
-                //     }
-                //     res.end()    
-                // })
+        } else if (currentUrl.indexOf('/list') == 0) {
+            const allsong = await List.findAll()
+                // for (var i = 0; i < allsong.length; i++) {
+                //     console.log(allsong[i].dataValues.name)
+                // }
+            fs.readFile(ls, function(err, data) {
+                if (err) {
+                    console.log("json 文件读取失败");
+                }
+                var ary = []
+                for (var i = 0; i < allsong.length; i++) {
+                    var arr = {
+                        id: allsong[i].dataValues.id,
+                        name: allsong[i].dataValues.name,
+                        author: allsong[i].dataValues.author,
+                        type: allsong[i].dataValues.type,
+                        link: allsong[i].dataValues.link,
+                    }
+                    ary.push(arr)
+                }
+                ary = JSON.stringify(ary)
+                fs.writeFile(ls, ary, function(err) {
+                    if (err) {
+                        console.log('写入失败')
+                    }
+                    res.end()
+                })
+                res.end()
+            })
         } else if (currentUrl.indexOf('/db.json') == 0) {
             fs.readFile(db, function(err, data) {
                 if (err) {
@@ -161,6 +194,7 @@ http
                 // 1.3 querystring方法处理数据
                 var obj = str.split(",")
                 ddd(req, res, obj)
+                songs.create({ name: obj[0], author: obj[1], type: obj[2], link: obj[3] })
             })
 
             function ddd(req, res, obj) {
@@ -193,6 +227,33 @@ http
                     res.end()
                 })
             }
+        } else if (currentUrl.indexOf('/printsong') == 0) {
+            const allsong = await songs.findAll()
+                // for (var i = 0; i < allsong.length; i++) {
+                //     console.log(allsong[i].dataValues.name)
+                // }
+            fs.readFile(db, function(err, data) {
+                if (err) {
+                    console.log("json 文件读取失败");
+                }
+                var ary = []
+                for (var i = 0; i < allsong.length; i++) {
+                    var arr = {
+                        name: allsong[i].dataValues.name,
+                        author: allsong[i].dataValues.author,
+                        type: allsong[i].dataValues.type,
+                    }
+                    ary.push(arr)
+                }
+                ary = JSON.stringify(ary)
+                fs.writeFile(db, ary, function(err) {
+                    if (err) {
+                        console.log('写入失败')
+                    }
+                    res.end()
+                })
+                res.end()
+            })
         } else if (currentUrl.indexOf('/removesong') == 0) {
             var str = ''
                 // 1.1 需要用data方法去读取数据
@@ -203,8 +264,10 @@ http
             req.on('end', () => {
                 // console.log(str)
                 // 1.3 querystring方法处理数据
-                str = str - 1
-                rrr(req, res, str)
+                str = str.split(",")
+                var name = str[1]
+                    // rrr(req, res, str[0])
+                songs.destroy({ where: { name } })
             })
 
             function rrr(req, res, str) {
@@ -321,7 +384,25 @@ http
                     res.end()
                 })
             }
-
+        } else if (currentUrl.indexOf('/userpofile') == 0) {
+            const token = storage.getItem('token')
+            const { username } = jwt.verify(token, 'xxoo')
+            const model = await User.findOne({ where: { username } })
+            if (!model) {
+                console.log('请登录')
+                res.end('请登录');
+                return
+            } else {
+                fs.readFile('./views/个人资料.html', 'utf8', (err, data) => {
+                    if (err) {
+                        res.end('出错');
+                        return
+                    }
+                    res.setHeader('content-Type', 'text/html;charset=utf-8');
+                    res.write(data);
+                    res.end()
+                })
+            }
         }
     })
     .listen(3000, () => {

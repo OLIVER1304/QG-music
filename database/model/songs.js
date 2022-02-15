@@ -13,6 +13,10 @@ const Song = sequelize.define('songs', {
     type: {
         type: Sequelize.STRING, //约束字符串类型
         allowNull: false //是否允许为空 (默认ture)
+    },
+    link: {
+        type: Sequelize.STRING, //约束字符串类型
+        allowNull: false //是否允许为空 (默认ture)
     }
 })
 

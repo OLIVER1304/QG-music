@@ -1,11 +1,12 @@
 .container {
     margin: 0 auto;
     width: 50%;
-    margin-top: 15%;
+    margin-top: 13%;
 }
 
 .rsbtn {
-    width: 400px;
+    width: 540px;
+    height: 70px;
     margin: 0 auto;
 }
 
@@ -13,16 +14,135 @@
     text-align: center;
     font-size: 80px;
     font-weight: bolder;
+    width: 540px;
+    margin: 0 auto;
 }
 
-.register,
-.login {
+.title div {
     display: inline-block;
-    width: 49%;
-    font-size: 28px;
+    margin: 0 15px;
+}
+
+.title p {
+    margin-bottom: 100px;
+    color: #00d2d3;
+}
+
+.btn1,
+.btn2 {
+    width: 140px;
+    height: 70px;
+    margin: 0 65px;
+    float: left;
+}
+
+.btn1 a,
+.btn2 a {
     text-decoration: none;
-    color: black;
+    width: inherit;
+    height: inherit;
+    display: block;
     text-align: center;
+    line-height: 70px;
+    position: relative;
+    color: #0f9271;
+}
+
+.btn1 a:hover,
+.btn2 a:hover {
+    color: #21dfac;
+}
+
+
+/* 注册按钮 */
+
+.btn1 a::before,
+.btn1 a::after {
+    position: absolute;
+    height: 25px;
+    width: 25px;
+    content: " ";
+    border: 2px solid #0f9271;
+    transition: all 1s;
+}
+
+.btn1 a::before {
+    top: 0;
+    left: 0;
+    border-right: 0;
+    border-bottom: 0;
+}
+
+.btn1 a::after {
+    bottom: 0;
+    right: 0;
+    border-top: 0;
+    border-left: 0;
+}
+
+.btn1 a:hover:before,
+.btn1 a:hover:after {
+    border: 2px solid #21dfac;
+}
+
+.btn1 a:hover:before {
+    width: 138px;
+    height: 68px;
+    border-right: 0;
+    border-bottom: 0;
+}
+
+.btn1 a:hover:after {
+    width: 138px;
+    height: 68px;
+    border-top: 0;
+    border-left: 0;
+}
+
+
+/* 登录按钮 */
+
+.btn2 a::before,
+.btn2 a::after {
+    position: absolute;
+    height: 25px;
+    width: 25px;
+    content: " ";
+    border: 2px solid #0f9271;
+    transition: all 1s;
+}
+
+.btn2 a::before {
+    top: 0;
+    right: 0;
+    border-left: 0;
+    border-bottom: 0;
+}
+
+.btn2 a::after {
+    bottom: 0;
+    left: 0;
+    border-top: 0;
+    border-right: 0;
+}
+
+.btn2 a:hover:before,
+.btn2 a:hover:after {
+    border: 2px solid #21dfac;
+}
+
+.btn2 a:hover:before {
+    width: 138px;
+    height: 68px;
+    border-left: 0;
+    border-bottom: 0;
+}
+
+.btn2 a:hover:after {
+    width: 138px;
+    height: 68px;
+    border-top: 0;
+    border-right: 0;
 }
 
 .signup {

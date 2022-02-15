@@ -5,7 +5,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>首页</title>
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
     <link rel="stylesheet" href="../public/css/home.css">
     <script src="../public/js/rolling-picture.js"></script>
     <link href="//netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
@@ -33,8 +35,30 @@
                 <input id="myInput" type="text" placeholder="音乐" onfocus="placeholder=''" onblur="placeholder='音乐'" onkeyup="myFunction()">
             </div>
         </div>
+        <div class="userpofile">
+            <a href="javascript:void(0);" id="pofile" onclick="userpo()"></a>
+            <div class="outfram">
+                <!-- <div class="tra"></div> -->
+                <div class="userpofilelist" id="userpofilelist">
+                    <li>
+                        <a href="/userpofile">
+                            <i class="fa fa-user"></i>
+                            <p>我的主页</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <i class="fa fa-stop-circle-o"></i>
+                            <p>退出</p>
+                        </a>
+                    </li>
+                </div>
+            </div>
+        </div>
     </div>
-    <div class="back-rolling-picture"></div>
+    <div class="back-rolling-picture">
+        <img class="brp" src="../public/img/1.jpg" alt="">
+    </div>
     <div class="wrap">
         <button class="btn" id="gopre" onclick="gopre()"> 
             <i class="fa fa-angle-left fa-3x"></i>
@@ -85,6 +109,10 @@
         </div>
     </div>
     <div class="songs">
+        <div class="head">
+            <div class="songlist">
+                <a href="">歌曲列表</a></div>
+        </div>
         <ul id="content">
             <li>
                 <div>歌曲</div>
@@ -136,12 +164,13 @@
                 <a id="list" href="javascript:;" class="list" onclick="musiclist()">播放列表</a>
             </div>
             <div id="playlist" class="playlist-2">
-                <div id="playing" class="playing">
-                    <div>
-                        <div>歌曲</div>
-                        <div>歌手</div>
-                        <div>类型</div>
+                <div class="left">
+                    <div class="head">
+                        <div>播放列表</div>
                         <div onclick="clearAll()">清空</div>
+                    </div>
+                    <div id="playing" class="playing">
+
                     </div>
                 </div>
             </div>
@@ -152,6 +181,7 @@
         <p></p>
     </div>
     <script src="../public/js/playmusic.js"></script>
+    <script src="../public/js/userpofile.js"></script>
     <script src="../public/js/search.js"></script>
     <script src="../public/js/playlist.js"></script>
     <script>

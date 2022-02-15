@@ -9,6 +9,18 @@ var str2;
 var x = 5
 var r = 4
 
+function writedata() {
+    var xhr = new XMLHttpRequest();
+
+    xhr.onreadystatechange = function() {
+        if (xhr.readyState == 4) {
+            getdata1()
+        }
+    }
+    xhr.open('get', '/printsong')
+    xhr.send(null)
+}
+
 function getdata1() {
     var xhr = new XMLHttpRequest();
 
@@ -20,6 +32,18 @@ function getdata1() {
         ing(str1, playing)
     }
     xhr.open('get', 'http://localhost:3000/public/js/db.json')
+    xhr.send(null)
+}
+
+function listdata() {
+    var xhr = new XMLHttpRequest();
+
+    xhr.onreadystatechange = function() {
+        if (xhr.readyState == 4) {
+            getdata2()
+        }
+    }
+    xhr.open('get', '/list')
     xhr.send(null)
 }
 
@@ -46,30 +70,21 @@ function output(str, content) {
             <div>${data[i].name}</div>
             <div>${data[i].author}</div>
             <div class="type">${data[i].type}</div>
-            <dia id="dock" title="加入播放列表" class="dock fa fa-plus" onclick="addinfo(this,playing,aubox);post(this)" data-index=${data[i].name},${data[i].author},${data[i].type},${data[i].link}></dia>
+            <div id="dock" title="加入播放列表" class="dock fa fa-plus" onclick="addinfo(this,playing,aubox);post(this)" data-index=${data[i].name},${data[i].author},${data[i].type},${data[i].link}></div>
             </li>`
     }
 }
-// 
+
 function ing(str, playing) {
     var data = JSON.parse(str);
     for (var i = 0; i < data.length; i++) {
-        var mmmm1 = document.createElement('div')
-        var mmmm2 = document.createElement('div')
-        var mmmm3 = document.createElement('div')
-        var mmmm4 = document.createElement('div')
-        var mmmm5 = document.createElement('a')
-        mmmm2.innerHTML = `${data[i].name}`
-        mmmm3.innerHTML = `${data[i].author}`
-        mmmm4.innerHTML = `${data[i].type}`
-        mmmm5.setAttribute("onclick", "removeinfo(this,deletesong)")
-        mmmm5.setAttribute("data-index", `${i+1}`)
-        mmmm5.setAttribute("class", "deletesong fa fa-trash-o")
-        mmmm1.append(mmmm2)
-        mmmm1.append(mmmm3)
-        mmmm1.append(mmmm4)
-        mmmm1.append(mmmm5)
-        playing.append(mmmm1)
+        playing.innerHTML = playing.innerHTML +
+            `<div>
+        <div>${data[i].name}</div>
+        <div>${data[i].type}</div>
+        <div>${data[i].author}</div>
+        <a onclick="removeinfo(this,deletesong)" data-index="${data[i].name}" class="deletesong fa fa-trash-o"></a>
+    </div>`
     }
 }
 
@@ -114,12 +129,15 @@ function getArrayIndex(arr, obj) {
 }
 
 function removeinfo(it) {
+    console.log(it)
     var child = playing.children
     var index = getArrayIndex(child, it.parentNode)
+    var name = it.getAttribute('data-index')
+    var parem = [index, name]
     playing.removeChild(child[index])
     var xh = new XMLHttpRequest();
     xh.open('post', '/removesong', true)
-    xh.send(index)
+    xh.send(parem)
     xh.onreadystatechange = function() {}
 }
 
@@ -167,7 +185,7 @@ function post(it) {
             link: data[3]
         },
         success: function(data) {
-            console.log(data)
+            // console.log(data)
         }
     })
 }
@@ -176,20 +194,11 @@ function ajax(option) {
 
     var xhr = new XMLHttpRequest();
     var params = " "
-        // for (var attr in option.data) {
-        //     params += attr + '=' + option.data[attr] + '&'
-        // }
-        // params = params.substring(0, params.length - 1)
-    console.log(params)
-        // params1 = data[0]
-        // params2 = data[1]
-        // params3 = data[2]
-        // params4 = data[3]
     params = [option.data.name, option.data.author, option.data.type, option.data.link]
-    console.log(params)
+        // console.log(params)
         // x-www-form-urlencoded
     xhr.open(option.type, option.url, true)
-    xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+    xhr.setRequestHeader("Content-Type", "application/json");
     xhr.send(params)
     xhr.onreadystatechange = function() {
         option.success(xhr.responseText)
@@ -197,6 +206,6 @@ function ajax(option) {
 }
 
 window.onload = function() {
-    getdata1()
-    getdata2()
+    writedata();
+    listdata()
 }
